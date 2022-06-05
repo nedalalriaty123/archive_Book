@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nedal</title>
+    <link rel="stylesheet" href="asset/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="asset/css/style.css">
+
+</head>
+
+<body class="bg-dark">
+
+    <main>
+        <div class="container">
+            <div>
+                <h1 class="text-white text-center pt-3">Archive Library</h1>
+            </div>
+            <form class="form row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-5 text-white h5">
+                <div class="col">
+                    <label for="NameB" class="form-label">Name of Book</label>
+                    <input type="text" class="form-control" id="NameB">
+                </div>
+                <div class="col">
+                    <label for="FiledB" class="form-label">Filed of Book</label>
+                    <input type="text" class="form-control" id="FiledB">
+                </div>
+                <div class="col">
+                    <label for="AuthorB" class="form-label">Book Author</label>
+                    <input type="text" class="form-control" id="AuthorB">
+                </div>
+                <div class="col">
+                    <label for="copyB" class="form-label">Number of Copies</label>
+                    <input type="number" class="form-control" id="copyB">
+                </div>
+                <div class="col">
+                    <label for="dateB" class="form-label">Date of compostion</label>
+                    <input type="date" class="form-control" id="dateB">
+                </div>
+                <div class="col">
+                    <label for="yearB" class="form-label">Year of Writing</label>
+                    <input type="number" class="form-control" id="yearB">
+                </div>
+                <div class="col">
+                    <label for="PhotoB" class="form-label">Cover Book</label>
+                    <input type="file" class="form-control" id="PhotoB">
+                </div>
+                <div class="col mt-5">
+                    <button type="button" class="btn btn-primary" id="btnCreat">Creat</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <section class="scearch position-relative">
+        <div class="container position-relative">
+            <div class="input-group mt-4 mb-4">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">filter</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" id="FiledMod" onclick="GetSearchMod(this.id)" href="#">Filed</a></li>
+                    <li><a class="dropdown-item" id="AuthorMod" onclick="GetSearchMod(this.id)" href="#">Author</a></li>
+                    <li><a class="dropdown-item" id="YearMod" onclick="GetSearchMod(this.id)" href="#">Year</a></li>
+                </ul>
+                <input type="text" id="Search" class="form-control" aria-label="Text input with 2 dropdown buttons">
+                <button id="SearchIcon" class="btn btn-outline-secondary  " type="button"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+        </div>
+        <button type="button" id="del" class="btn btn-danger btn-sm position-absolute top-0">deleat All</button>
+    </section>
+
+    <section class="books">
+        <div>
+            <h1 class="text-white text-center pt-3">Books</h1>
+        </div>
+        <div class="container ">
+
+            <div id="contanBoooks"
+                class="row row-cols-1 justify-content-between position-relative row-cols-md-2 row-cols-lg-3">
+
+                //Add card here
+                // edite book
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <button type="button" data-bs-toggle="modal" data-bs-target="#book"
+                    class="btn fs-6 m-2 btn-danger btn_edite"><i class="fa-solid fa-gear"></i></button> -->
+
+    <form class="modal fade" id="book">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="modal-title">
+                        Edite
+                    </div>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="edite01">
+                    <div class="form row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 ">
+                        <div class="col">
+                            <label for="ENameB" class="form-label">Name of Book</label>
+                            <input type="text" class="form-control" id="ENameB">
+                        </div>
+                        <div class="col">
+                            <label for="EFiledB" class="form-label">Filed of Book</label>
+                            <input type="text" class="form-control" id="EFiledB">
+                        </div>
+                        <div class="col">
+                            <label for="EAuthorB" class="form-label">Book Author</label>
+                            <input type="text" class="form-control" id="EAuthorB">
+                        </div>
+                        <div class="col">
+                            <label for="EcopyB" class="form-label">Number of Copies</label>
+                            <input type="number" class="form-control" id="EcopyB">
+                        </div>
+                        <div class="col">
+                            <label for="EdateB" class="form-label">Date of compostion</label>
+                            <input type="date" class="form-control" id="EdateB">
+                        </div>
+                        <div class="col">
+                            <label for="EyearB" class="form-label">Year of Writing</label>
+                            <input type="number" class="form-control" id="EyearB">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnUpdate" class="btn btn-lg mt-3 btn-success" data-bs-dismiss="modal">UPDATE</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <script src="asset/js/bootstrap.bundle.min.js"></script>
+    <script src="asset/js/assigent.js"></script>
+
+</body>
+
+</html>

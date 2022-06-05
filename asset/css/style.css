@@ -1,0 +1,29 @@
+main{
+    width: 100%;
+    min-height: 70vh;
+    background-image: url(../img/bgMain.jpg);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+main .container .pt-5 {
+    padding-top: 90px !important;
+}
+
+
+section.books .container .btn_close{
+    width: fit-content;
+    position: absolute;
+    left: 0;
+}
+section.books .container .btn_edite{
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    /* left: 240px; */
+    /* top: 75px; */
+}
+
+section.scearch .top-0{
+    top : -24px !important;
+}
